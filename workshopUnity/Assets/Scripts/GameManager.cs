@@ -7,8 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    // IF YOU WANT TO KEEP THESE PRIVATE AND WANT ACCESS TO THEM
+    // YOU MUST SETUP A GETTER AND SETTER FOR EACH
     [SerializeField] public List<GameObject> redCollectibles;
     [SerializeField] public List<GameObject> blueCollectibles;
+    // IF YOU WANT TO KEEP THESE PRIVATE AND WANT ACCESS TO THEM
+    // YOU MUST SETUP A GETTER AND SETTER FOR EACH
     [SerializeField] public Door door;
 
     private void Awake()

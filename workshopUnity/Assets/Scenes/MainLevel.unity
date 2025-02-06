@@ -974,6 +974,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1571175183254387454, guid: daf7b998c28689c43b202e78311695d3, type: 3}
   m_PrefabInstance: {fileID: 758011168}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &796864964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796864965}
+  m_Layer: 0
+  m_Name: =====DontDestroyOnLoadMustBeRoot=====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796864965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796864964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &817656558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1794,7 +1825,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 179453789605071184}
-  - {fileID: 7199650082836441665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1352250524
@@ -2269,6 +2299,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6502799144543994923}
     - target: {fileID: 8988985120480614226, guid: 8ed51cd5cb78d9c42bfcbf460c6c0bbb, type: 3}
+      propertyPath: turn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988985120480614226, guid: 8ed51cd5cb78d9c42bfcbf460c6c0bbb, type: 3}
       propertyPath: redCollectibles.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -2405,7 +2439,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1294326398}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 66038626345591275, guid: 6795314bfa5612b45a28e82c63003f5b, type: 3}
       propertyPath: m_Name
@@ -2464,11 +2498,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6795314bfa5612b45a28e82c63003f5b, type: 3}
---- !u!4 &7199650082836441665 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5895089810876379488, guid: 6795314bfa5612b45a28e82c63003f5b, type: 3}
-  m_PrefabInstance: {fileID: 7199650082836441664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2476,6 +2505,8 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1294326398}
+  - {fileID: 796864965}
+  - {fileID: 7199650082836441664}
   - {fileID: 1456478127}
   - {fileID: 1065395188}
   - {fileID: 1595240074}
