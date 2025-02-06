@@ -8,7 +8,12 @@ public class RedCollectible : BaseCollectible
     {
         // If you want base class behavior to be included.
         base.OnHitAction();
-        PlayerManager.Instance.playerHP -= onHitOutcome;
+
+        if (PlayerManager.Instance.currentPlayerHP > 0)
+        {
+            PlayerManager.Instance.currentPlayerHP -= onHitOutcome;
+            PlayerManager.Instance.UpdateHealthBar();
+        }
 
         GameManager.Instance.blueCollectibles.Remove(GetComponent<GameObject>());
         Destroy(gameObject);

@@ -9,8 +9,12 @@ public class BlueCollectible : BaseCollectible
         // If you want base class behavior to be included.
         base.OnHitAction();
 
-        PlayerManager.Instance.playerHP += onHitOutcome;
-
+        if (PlayerManager.Instance.currentPlayerHP < PlayerManager.Instance.maxPlayerHP)
+        {
+            PlayerManager.Instance.currentPlayerHP += onHitOutcome;
+            PlayerManager.Instance.UpdateHealthBar();
+        }
+        
         GameManager.Instance.blueCollectibles.Remove(gameObject);
         if (GameManager.Instance.blueCollectibles.Count <= 0)
         {

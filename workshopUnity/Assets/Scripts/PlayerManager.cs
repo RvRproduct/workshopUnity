@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [HideInInspector] public int playerHP = 50;
+    [SerializeField] public int maxPlayerHP = 50;
+    [HideInInspector] public int currentPlayerHP;
+    [SerializeField] private RectTransform healthBarFill;
+    [SerializeField] private RectTransform healthBarContainer;
     public static PlayerManager Instance;
 
     private void Awake()
@@ -12,11 +15,20 @@ public class PlayerManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            currentPlayerHP = maxPlayerHP;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    public void UpdateHealthBar()
+    {
+        float fillAmount = (float)currentPlayerHP / maxPlayerHP;
+
+        float newWidth = fillAmount * healthBarContainer.rect.width;
+        healthBarFill.sizeDelta = new Vector2(newWidth, healthBarFill.sizeDelta.y);
     }
 }
