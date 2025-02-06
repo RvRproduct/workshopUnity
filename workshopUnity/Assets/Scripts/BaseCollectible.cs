@@ -11,8 +11,11 @@ public class BaseCollectible : MonoBehaviour
         Debug.Log("Hello from Base class");
     }
 
-    protected void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision other)
     {
-        OnHitAction();
+        if (other.gameObject.tag == "Player")
+        {
+            OnHitAction();
+        } 
     }
 }

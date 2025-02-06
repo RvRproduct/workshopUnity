@@ -11,7 +11,7 @@ public class BlueCollectible : BaseCollectible
 
         PlayerManager.Instance.playerHP += onHitOutcome;
 
-        GameManager.Instance.blueCollectibles.Remove(GetComponent<GameObject>());
+        GameManager.Instance.blueCollectibles.Remove(gameObject);
         if (GameManager.Instance.blueCollectibles.Count <= 0)
         {
             GameManager.Instance.door.destroyDoor();
